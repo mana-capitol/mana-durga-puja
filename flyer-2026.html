@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MANA CAPITOL PARIVAR DURGOTSAV 2026 — Flyer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Marcellus&family=Mukta:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --maroon: #7B0D1E;
+      --maroon-deep: #5a0915;
+      --red: #B22222;
+      --terracotta: #C8522A;
+      --gold: #C9A227;
+      --gold-bright: #E8C24A;
+      --parchment: #f3e7cf;
+      --parchment-dark: #e6d4b0;
+      --ink: #2b1d12;
+    }
+
+    body {
+      font-family: 'Mukta', sans-serif;
+      background: #2b1d12;
+      color: var(--ink);
+      display: flex;
+      justify-content: center;
+      padding: 24px 12px;
+      min-height: 100vh;
+    }
+
+    /* ─────────  FLYER CANVAS (A4 portrait ratio)  ───────── */
+    .flyer {
+      position: relative;
+      width: 820px;
+      max-width: 100%;
+      aspect-ratio: 1 / 1.414;
+      background:
+        radial-gradient(ellipse at 20% 10%, rgba(255,255,255,0.45), transparent 55%),
+        radial-gradient(ellipse at 85% 90%, rgba(160,120,60,0.30), transparent 60%),
+        linear-gradient(135deg, #f6ecd6 0%, #efe0c2 45%, #e7d2a8 100%);
+      box-shadow: 0 24px 70px rgba(0,0,0,0.55);
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    /* subtle paper grain / mandala watermark */
+    .flyer::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Cg fill='none' stroke='rgba(123,13,30,0.06)' stroke-width='1'%3E%3Ccircle cx='150' cy='150' r='120'/%3E%3Ccircle cx='150' cy='150' r='90'/%3E%3Ccircle cx='150' cy='150' r='60'/%3E%3Ccircle cx='150' cy='150' r='30'/%3E%3Cpath d='M150 10 L150 290 M10 150 L290 150 M55 55 L245 245 M245 55 L55 245'/%3E%3C/g%3E%3C/svg%3E") center/520px no-repeat;
+      opacity: 0.7;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ornate double border frame */
+    .frame {
+      position: absolute;
+      inset: 16px;
+      border: 2px solid var(--gold);
+      z-index: 3;
+      pointer-events: none;
+    }
+    .frame::after {
+      content: "";
+      position: absolute;
+      inset: 6px;
+      border: 1px solid rgba(123,13,30,0.45);
+    }
+    .corner {
+      position: absolute;
+      width: 46px;
+      height: 46px;
+      border: 2px solid var(--maroon);
+      z-index: 4;
+      pointer-events: none;
+    }
+    .corner.tl { top: 22px; left: 22px; border-right: none; border-bottom: none; }
+    .corner.tr { top: 22px; right: 22px; border-left: none; border-bottom: none; }
+    .corner.bl { bottom: 22px; left: 22px; border-right: none; border-top: none; }
+    .corner.br { bottom: 22px; right: 22px; border-left: none; border-top: none; }
+
+    .content {
+      position: relative;
+      z-index: 5;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 46px 44px 38px;
+    }
+
+    /* ─────────  TOP RIBBON  ───────── */
+    .eyebrow {
+      text-align: center;
+      font-family: 'Marcellus', serif;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--maroon);
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+    .eyebrow span {
+      display: inline-block;
+      padding: 0 14px;
+      position: relative;
+    }
+    .eyebrow span::before,
+    .eyebrow span::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 46px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold));
+    }
+    .eyebrow span::before { right: 100%; }
+    .eyebrow span::after { left: 100%; transform: scaleX(-1); }
+
+    .title-box {
+      text-align: center;
+      border: 2px solid var(--maroon);
+      box-shadow: inset 0 0 0 4px rgba(201,162,39,0.5);
+      padding: 14px 10px 12px;
+      background: rgba(255,255,255,0.25);
+    }
+    .org-name {
+      font-family: 'Cinzel', serif;
+      font-weight: 800;
+      color: var(--maroon);
+      font-size: 30px;
+      line-height: 1.05;
+      letter-spacing: 1px;
+    }
+    .org-name small {
+      display: block;
+      font-size: 17px;
+      letter-spacing: 3px;
+      color: var(--terracotta);
+      margin-top: 2px;
+    }
+
+    /* ─────────  HERO (medallion + festival)  ───────── */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+      margin: 14px 0 6px;
+    }
+    .medallion {
+      flex: 0 0 auto;
+      width: 104px;
+      height: 104px;
+      border-radius: 50%;
+      background: #fff;
+      border: 3px solid var(--gold);
+      box-shadow: 0 0 0 5px rgba(123,13,30,0.85), 0 8px 18px rgba(123,13,30,0.30);
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .medallion img { width: 78px; height: auto; }
+
+    .festival { text-align: center; }
+    .festival .name {
+      font-family: 'Cinzel', serif;
+      font-weight: 900;
+      font-size: 48px;
+      line-height: 0.92;
+      letter-spacing: 1px;
+      color: var(--maroon);
+      text-shadow: 2px 2px 0 rgba(201,162,39,0.35);
+    }
+    .festival .year {
+      display: block;
+      font-size: 30px;
+      color: var(--terracotta);
+      letter-spacing: 9px;
+      margin-top: 4px;
+    }
+    .invocation {
+      text-align: center;
+      font-family: 'Marcellus', serif;
+      color: var(--maroon-deep);
+      font-size: 14px;
+      letter-spacing: 1px;
+      margin: 2px 0 0;
+    }
+
+    .divider {
+      width: 200px;
+      height: 0;
+      margin: 12px auto;
+      border-top: 2px solid var(--maroon);
+      position: relative;
+    }
+    .divider::after {
+      content: "✸";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #efe0c2;
+      color: var(--gold);
+      padding: 0 10px;
+      font-size: 15px;
+    }
+
+    /* ─────────  PHOTO GALLERY  ───────── */
+    .gallery-title {
+      text-align: center;
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--maroon);
+      font-size: 14px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+    .gallery figure {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      border: 3px solid #fff;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.28), 0 0 0 1px var(--gold);
+      border-radius: 3px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .4s ease;
+    }
+    .gallery figure:hover img { transform: scale(1.06); }
+
+    /* ─────────  INFO GRID  ───────── */
+    .info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 9px;
+      margin-top: 14px;
+    }
+
+    .greeting {
+      text-align: center;
+      font-family: 'Marcellus', serif;
+      color: var(--maroon-deep);
+      font-size: 20px;
+      letter-spacing: 1px;
+      line-height: 1.5;
+    }
+    .greeting .sub {
+      display: block;
+      font-family: 'Mukta', sans-serif;
+      font-size: 14px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-top: 4px;
+    }
+    .info-row {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+    .info-row .label {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      color: var(--maroon);
+      letter-spacing: 1px;
+      min-width: 88px;
+      text-transform: uppercase;
+      font-size: 13px;
+      padding-top: 1px;
+    }
+    .info-row .value { color: var(--ink); font-weight: 500; }
+    .info-row .value strong { color: var(--maroon-deep); }
+
+    .sponsors {
+      text-align: center;
+      margin-top: 2px;
+    }
+    .sponsors .label {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      color: var(--maroon);
+      letter-spacing: 2px;
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+    .sponsor-chips {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+    }
+    .sponsor-chips span {
+      border: 1px solid var(--gold);
+      background: rgba(201,162,39,0.12);
+      color: var(--maroon-deep);
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    /* ─────────  CONTACT BANNER  ───────── */
+    .contact {
+      margin-top: 14px;
+      background: linear-gradient(135deg, var(--maroon-deep), var(--maroon) 55%, var(--terracotta));
+      border: 2px solid var(--gold-bright);
+      box-shadow: inset 0 0 0 4px rgba(0,0,0,0.18);
+      border-radius: 10px;
+      padding: 13px 18px;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
+    .contact h3 {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      letter-spacing: 3px;
+      font-size: 16px;
+      color: var(--gold-bright);
+      margin-bottom: 10px;
+    }
+    .contact h3::before, .contact h3::after { content: "❖"; margin: 0 10px; color: #fff; }
+    .contact-grid {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
+      font-size: 16px;
+    }
+    .contact-grid div {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+    }
+    .contact-grid .ico {
+      color: var(--gold-bright);
+      font-size: 17px;
+    }
+
+    /* ─────────  PRINT  ───────── */
+    @media print {
+      @page { size: A4 portrait; margin: 0; }
+      body { background: #fff; padding: 0; }
+      .flyer { box-shadow: none; width: 210mm; height: 297mm; aspect-ratio: auto; }
+      .gallery img { transition: none; }
+    }
+
+    @media (max-width: 560px) {
+      .content { padding: 30px 20px 24px; }
+      .org-name { font-size: 20px; }
+      .hero { gap: 14px; }
+      .festival .name { font-size: 34px; }
+      .festival .year { font-size: 22px; letter-spacing: 5px; }
+      .medallion { width: 78px; height: 78px; }
+      .medallion img { width: 58px; }
+      .gallery { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <div class="flyer">
+    <div class="frame"></div>
+    <span class="corner tl"></span>
+    <span class="corner tr"></span>
+    <span class="corner bl"></span>
+    <span class="corner br"></span>
+
+    <div class="content">
+      <!-- Top ribbon -->
+      <div class="eyebrow"><span>Sharadiya Durga Puja &bull; Navratri 2026</span></div>
+
+      <div class="title-box">
+        <div class="org-name">
+          MANA CAPITOL PARIVAR
+          <small>D U R G O T S A V</small>
+        </div>
+      </div>
+
+      <!-- Hero: medallion + festival -->
+      <div class="hero">
+        <span class="medallion"><img src="Durga-ma-png.jpg" alt="Maa Durga" /></span>
+        <div class="festival">
+          <span class="name">DURGOTSAV</span>
+          <span class="year">2 0 2 6</span>
+        </div>
+      </div>
+      <p class="invocation">|| या देवी सर्वभूतेषु शक्तिरूपेण संस्थिता ||</p>
+
+      <div class="divider"></div>
+
+      <!-- Photo gallery -->
+      <div class="gallery-title">Glimpses of our Celebration</div>
+      <div class="gallery">
+        <figure><img src="1.jpeg" alt="Durga idol immersion procession" /></figure>
+        <figure><img src="7.jpeg" alt="Evening festivities at the campus" /></figure>
+        <figure><img src="8.jpeg" alt="Dhunuchi dance under the lights" /></figure>
+        <figure><img src="3.jpeg" alt="Sindoor khela with dhakis" /></figure>
+        <figure><img src="2.jpeg" alt="Community gathering and dance" /></figure>
+        <figure><img src="6.jpeg" alt="Cultural evening inside the pandal" /></figure>
+        <figure><img src="5.jpeg" alt="Children's cultural performance" /></figure>
+        <figure><img src="4.jpeg" alt="Kids on stage during the program" /></figure>
+      </div>
+
+      <!-- Info -->
+      <div class="info">
+        <div class="info-row">
+          <span class="label">Venue</span>
+          <span class="value">SY. No. 31, <strong>Carmelaram</strong>, Sarjapur Main Road, Bangalore 560035</span>
+        </div>
+        <div class="info-row">
+          <span class="label">About</span>
+          <span class="value"><strong>700+ Units</strong> &bull; <strong>7 Acre Campus</strong> beside RGA Tech Park</span>
+        </div>
+
+        <div class="sponsors">
+          <div class="label">Our Previous Sponsors</div>
+          <div class="sponsor-chips">
+            <span>Urban Company</span>
+            <span>Snabbit</span>
+            <span>Milkvilla</span>
+            <span>First Club</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div class="contact">
+        <h3>SPONSORSHIP &amp; STALL BOOKING</h3>
+        <div class="contact-grid">
+          <div><span class="ico">✆</span> 8420048080 / 9535855488</div>
+          <div><span class="ico">✉</span> ankan4445@gmail.com</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
