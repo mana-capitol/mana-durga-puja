@@ -170,6 +170,42 @@
       flex-wrap: wrap;
     }
 
+    /* ── QR BANNER ── */
+    .qr-banner {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      background: linear-gradient(135deg, #fff8f0 0%, #fff3e8 100%);
+      border: 1px dashed #C9A227;
+      border-radius: 12px;
+      padding: 14px 20px;
+      margin-bottom: 22px;
+    }
+
+    .qr-banner-img {
+      width: 84px;
+      height: 84px;
+      flex-shrink: 0;
+      background: #fff;
+      padding: 6px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(178,34,34,0.18), 0 0 0 1px #f0d8c8;
+    }
+
+    .qr-banner-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #7B0D1E;
+      margin-bottom: 4px;
+    }
+
+    .qr-banner-sub {
+      font-size: 0.8rem;
+      line-height: 1.5;
+      color: #555;
+    }
+
     /* ── SECTION HEADING ── */
     .section-heading {
       font-family: 'Playfair Display', serif;
@@ -467,12 +503,12 @@
     <!-- HERO HEADER -->
     <div class="hero">
       <div class="hero-logos">
-        <img src="../Durga-ma-png.jpg" alt="Durga Ma" class="hero-logo" />
+        <img src="Durga-ma-png.jpg" alt="Durga Ma" class="hero-logo" />
         <div class="hero-title-wrap">
           <div class="hero-eyebrow">Sponsorship Proposal</div>
           <div class="hero-title">MANA CAPITOL PARIVAR<br /><span>DURGOTSAV 2026</span></div>
         </div>
-        <img src="../Durga-ma-png.jpg" alt="Durga Ma" class="hero-logo" />
+        <img src="Durga-ma-png.jpg" alt="Durga Ma" class="hero-logo" />
       </div>
       <div class="hero-divider">
         <div class="hero-divider-line"></div>
@@ -493,6 +529,15 @@
         <div class="contact-row">
           <div><strong>Email:</strong> ankan.cse4445@gmail.com</div>
           <div><strong>Phone / WhatsApp:</strong> 8420048080 &nbsp;/&nbsp; 9535855488</div>
+        </div>
+      </div>
+
+      <!-- QR — RELIVE LAST YEAR -->
+      <div class="qr-banner">
+        <img src="qrcode_dp.png" alt="QR code linking to previous Durga Puja highlights" class="qr-banner-img" />
+        <div>
+          <div class="qr-banner-title">Relive Durgotsav 2025 ✨</div>
+          <div class="qr-banner-sub">Scan the QR code to explore photos &amp; moments from last year's celebration.</div>
         </div>
       </div>
 
